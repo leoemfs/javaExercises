@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Fibonacci {
+	public static void main(String[] args) {
+	//imprimindo a sequencia toda
+			int numAnterior = 0, numAtual = 1, novoNum;
+			String valor_inicial = "1";
+			for (int i = 0; i<= 30; i++) {
+				novoNum = numAtual + numAnterior; //agora novo_num vale a soma do atual com o anterior
+				numAnterior = numAtual;            //num_anterior agora vale o valor de atual
+				numAtual = novoNum;                //num_atual agora vale o valor de novo_num
+				valor_inicial += " " + novoNum;
+			}
+			System.out.println(valor_inicial);	
+			
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Digite um numero inteiro: ");
+		int num = entrada.nextInt();
+		
+		entrada.close();
+		
+		int num_anterior = 1, num_atual = 1, fibonacci = 0;
+		
+		while (fibonacci <= num){
+			
+			fibonacci = num_anterior + num_atual;
+			num_anterior = num_atual;
+			num_atual = fibonacci;
+			
+			if(fibonacci == num) {
+				System.out.println(num + " faz parte da sequencia de Fibonacci!");
+				break;
+			}else {
+				System.out.println(num + " não faz parte da sequencia de Fibonacci!");
+			}	
+		}	
+	}
+}
