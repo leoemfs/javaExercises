@@ -13,7 +13,7 @@ public class MesFavorito {
 		if(mes > 12 || mes < 1) {
 			System.out.print("Você digitou um mês invalido");
 		}else {
-			System.out.print("Seu mês favorito é: " + meses[mes]);
+			System.out.print("Seu mês favorito é: " + meses[mes - 1]);
 		}
 
 	}
