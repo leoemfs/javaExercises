@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class ListaSalarios {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		System.out.print("Quantos funcionarios quer cadastrar: ");
+		int qtd_func = entrada.nextInt();
+		
+		double salarios[] = new double[qtd_func];
+		double total_sal = 0;
+		
+		for(int i=0; i < qtd_func; i++) {
+			System.out.print("Digite o salario do funcionario " + (i+1) + ": ");
+			salarios[i] = entrada.nextDouble();
+			total_sal += salarios[i];
+		}
+		entrada.close();
+		
+		double media_sal = total_sal / qtd_func;
+		int acima_media = 0;
+		
+		for(int i = 0; i < qtd_func; i++) {
+			if (salarios[i] > media_sal) {
+				acima_media++;
+			}
+		}
+		
+		System.out.println("A media salarial é: R$" + media_sal);
+		System.out.println("Quantida de funcionarios que recebem acima da media: " + acima_media);
+	}
+
+}
