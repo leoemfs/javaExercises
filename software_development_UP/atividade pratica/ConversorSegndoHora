@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class ConversorSegundoHora {
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Digitem quantos segundos quer converter em h/m/s: ");
+		int segundos_digitado = entrada.nextInt();
+		entrada.close();
+		
+		int uma_hora = 3600;
+		int horas = segundos_digitado / uma_hora;
+		int minutos = (segundos_digitado / uma_hora % 60);
+		int segundos = segundos_digitado / 60;
+		
+		System.out.println(horas + " Horas " + minutos + " Minutos " + segundos + " Segundos");
+		
+	}
+} 
