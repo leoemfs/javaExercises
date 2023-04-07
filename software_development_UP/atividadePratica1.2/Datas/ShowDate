@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ShowDate {
+    public static void main(String[] args){
+    	Scanner sc = new Scanner(System.in);
+      
+    	Data data = new Data();
+    	System.out.println("Data atual: " + data.toString());
+    	
+    	System.out.println("Digite um dia: ");
+    	data.setDia(sc.nextInt());
+    	System.out.println("Digite um mes: ");
+    	data.setMes(sc.nextInt());
+    	System.out.println("Digite um ano: ");
+    	data.setAno(sc.nextInt());
+ 
+    	System.out.println("Data fornecida: " + data.toString());
+    	
+    	data.avancarUmDia();
+    	System.out.println("Avançando um dia: " + data.toString());
+    	
+      
+      
+      
+      //opção de avançar para o usuario não concluida
+    	/*String menu = "Deseja avançar um dia?\n"
+    			+ "1- Sim"
+    			+ "2- Não\n"
+    			+ "";
+    	
+    	int option = 0;
+    	switch (option) {
+    		case 1:
+    			System.out.println("Deseja avançar um dia? " + data.toString());
+    	}*/
+       
+    }
+    
+}
