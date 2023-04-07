@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class ElementosDeConstrucao {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//criando objeto e instanciando eles
+		Door door1 = new Door("branca", false, 1.0, 2.0, 0.1);
+		Door door2 = new Door("preta", true, 2.0, 3.0, 0.5);
+		Door door3 = new Door("azul", true, 1.5, 2.0, 1.5);
+		//mexendo com o objeto door1
+		
+		/*if(door1.isOpen() == false) {
+			System.out.println("A porta 1 está fechada.");
+		}else {
+			System.out.println("A porta 1 está aberta.");
+		}
+		System.out.println("De que cor quer pintar a porta? ");
+		door1.setColor(sc.next());
+		System.out.println("Agora a porta 1 está da cor: " + door1.getColor());*/
+		
+		door1.paint("Rosa");
+		door1.setWidth(5.0);
+		door1.setHeigth(8.0);
+		door1.setDepth(2.0);
+		door1.open();
+	
+		door2.paint("Preta");
+		door2.setWidth(2.0);
+		door2.setHeigth(4.0);
+		door2.setDepth(1.0);
+		door2.close();
+
+		door3.paint("Branca");
+		door3.setWidth(4.0);
+		door3.setHeigth(3.0);
+		door3.setDepth(0.5);
+		door3.open();
+		
+		System.out.println("Sobre a porta 1: " + "\n" + door1.toString());
+		System.out.println("-------------------------------------");
+		System.out.println("Sobre a porta 2: " + "\n" + door2.toString());
+		System.out.println("-------------------------------------");
+		System.out.println("Sobre a porta 3: " + "\n" + door3.toString());
+		System.out.println("----------------House---------------------");
+		House house1 = new House("azul", door1,door2, door3);
+		house1.paint("vermelha");
+		System.out.println("Quantas portas estão abertas? " + house1.howManyDoorsAreOpen());
+		sc.close();
+	}
+
+}
