@@ -1,0 +1,57 @@
+import java.time.LocalDate;
+
+public class Data{
+	private int dia;   //LocalDate.now() metodo que recebe os value da data do sistema
+	private int mes;
+	private int ano;
+	
+	public Data() {
+		LocalDate infoData = LocalDate.now();
+		this.dia = infoData.getDayOfMonth();
+		this.mes = infoData.getMonthValue();
+		this.ano = infoData.getYear();
+	}
+	public int getDia() {
+		return dia;
+	}
+	public void setDia(int dia) {
+		if(dia > 31 || dia < 1) {
+			System.out.println("Dia invalido.");
+		}else {
+		this.dia = dia;
+		}
+	}
+	public int getMes() {
+		return mes;
+	}
+	public void setMes(int mes) {
+		if(mes > 12 || mes < 1) {
+			System.out.println("Mes invalido.");
+		}else {
+			this.mes = mes;
+		}
+	}
+	public int getAno() {
+		return ano;
+	}
+	public void setAno(int ano) {
+		if(ano < 1900 || ano > 2999) {
+			System.out.println("Ano invalido.");
+		}else {
+			this.ano = ano;
+		}
+	}
+	public void avancarUmDia() {
+		if(this.dia < 31) {
+			this.dia++;
+		}else {
+			this.dia = 1;
+			this.mes = 1;
+			this.ano++;
+		}
+	}
+	public String toString() {
+		String texto = dia + "/" + mes + "/" + ano;
+		return texto;
+	}
+}
