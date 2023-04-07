@@ -45,10 +45,14 @@ public class Data{
 		if(this.dia < 31) {
 			this.dia++;
 		}else {
+			this.mes++;
 			this.dia = 1;
-			this.mes = 1;
-			this.ano++;
+			if(this.mes == 13) {
+				this.mes = 1;
+				this.ano++;
+			}		
 		}
+	}
 	}
 	public String toString() {
 		String texto = dia + "/" + mes + "/" + ano;
