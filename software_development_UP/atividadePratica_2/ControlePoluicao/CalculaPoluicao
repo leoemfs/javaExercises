@@ -1,9 +1,12 @@
 package atividadePratica2;
 
 public class CalculaPoluicao {
+	//declarando atributos
 	private double indice;
 	private String msg;
 	
+	//metodo para calcular indice de poluição
+	//devolve uma String msg
 	public String calculaPoluicao() {
 		if (indice >= 0.06 && indice <= 0.16) {
             this.msg = "Aceitável.";
@@ -21,6 +24,7 @@ public class CalculaPoluicao {
 		return msg;
 	}
 
+	//get e set dos atributos da class
 	public double getIndice() {
 		return indice;
 	}
