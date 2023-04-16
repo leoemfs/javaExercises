@@ -1,0 +1,31 @@
+package atividadePratica2;
+
+public class CalculaPoluicao {
+	private double indice;
+	private String msg;
+	
+	public String calculaPoluicao() {
+		if (indice >= 0.06 && indice <= 0.16) {
+            this.msg = "Aceitável.";
+        } else if (indice > 0.16 && indice < 0.25) {
+            this.msg = "Elevado. Nenhuma ação necessária.";
+        } else if (indice >= 0.25 && indice < 0.4) {
+            this.msg = "Muito elevado. Indústrias do 1° grupo devem reduzir em 50% suas atividades.";
+        } else if (indice >= 0.4 && indice < 0.5) {
+            this.msg = "Crítico. Indústrias do 1° e 2° grupos devem suspender suas atividades.";
+        } else if (indice >= 0.5) {
+            this.msg = "Extremamente crítico. Todos os grupos de indústrias devem paralisar suas atividades.";
+        } else {
+            this.msg = "Índice de poluição inválido.";
+        }
+		return msg;
+	}
+
+	public double getIndice() {
+		return indice;
+	}
+
+	public void setIndice(double indice) {
+		this.indice = indice;
+	}
+}
