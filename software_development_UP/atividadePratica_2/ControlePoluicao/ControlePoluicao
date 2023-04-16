@@ -1,0 +1,17 @@
+package atividadePratica2;
+import java.util.Scanner;
+
+public class ControlePoluicaoMain {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        ControlePoluicao novaMedida = new ControlePoluicao();
+        
+        System.out.println("Digite o indice de poluição medido: ");
+        novaMedida.setIndice(sc.nextDouble());
+        
+        System.out.println(novaMedida.calculaPoluicao());
+
+        sc.close();
+    }
+}
