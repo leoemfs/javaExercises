@@ -1,6 +1,6 @@
-package atividadePratica2;
+package atividadePratica_2;
 
-public class Cobranca {
+public class CalculaJuros {
 	private double valorOriginal;
 	private int diasAtraso;
 	private String msg;
