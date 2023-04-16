@@ -5,11 +5,13 @@ public class ControlePoluicaoMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
+        //instanciando objeto para nova medida
         ControlePoluicao novaMedida = new ControlePoluicao();
         
         System.out.println("Digite o indice de poluição medido: ");
         novaMedida.setIndice(sc.nextDouble());
         
+        //chamando metodo que calcula e devolve uma String
         System.out.println(novaMedida.calculaPoluicao());
 
         sc.close();
