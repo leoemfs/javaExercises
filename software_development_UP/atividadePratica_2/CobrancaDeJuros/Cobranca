@@ -1,0 +1,24 @@
+package atividadePratica_2;
+
+import java.util.Scanner;
+
+public class Cobranca {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        //instanciando objto cobranca
+        Cobranca novaCobranca = new Cobranca();
+        
+        //setando valores nos atributos da class
+        System.out.println("Informe o valor original do boleto: ");
+        novaCobranca.setValorOriginal(sc.nextDouble());
+        System.out.println("Informe os dias de atraso do boleto: ");
+        novaCobranca.setDiasAtraso(sc.nextInt());
+        
+        //chamando o metodo de calcular juros, devolve uma string
+        System.out.println(novaCobranca.calculaJuros());
+        
+        sc.close();
+    }
+}
