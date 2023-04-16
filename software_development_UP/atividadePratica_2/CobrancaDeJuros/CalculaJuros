@@ -1,0 +1,30 @@
+package atividadePratica2;
+
+public class Cobranca {
+	private double valorOriginal;
+	private int diasAtraso;
+	private String msg;
+	
+	//metodo para calcular os juros e retornar uma String
+	public String calculaJuros() {
+		double valorMulta = valorOriginal * 0.05;
+        double valorJuros = valorOriginal * 0.01 * diasAtraso;
+        double valorTotal = valorOriginal + valorMulta + valorJuros;
+        this.msg = "Valor Original: R$ " + valorOriginal + "\n" + "Dias de Atraso: " + diasAtraso + "\n" + "Valor Total a Pagar: R$ " + valorTotal;
+        return msg;
+	}
+	
+	//get e set da class
+	public double getValorOriginal() {
+		return valorOriginal;
+	}
+	public void setValorOriginal(double valorOriginal) {
+		this.valorOriginal = valorOriginal;
+	}
+	public int getDiasAtraso() {
+		return diasAtraso;
+	}
+	public void setDiasAtraso(int diasAtraso) {
+		this.diasAtraso = diasAtraso;
+	}
+}
