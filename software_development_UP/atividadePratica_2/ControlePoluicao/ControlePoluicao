@@ -1,4 +1,4 @@
-package atividadePratica2;
+package atividadePratica_2;
 import java.util.Scanner;
 
 public class ControlePoluicaoMain {
