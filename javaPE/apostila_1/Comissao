@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Comissao {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int idVendedor;
+		int idPeca;
+		double valorPeca;
+		int qtdVendida;
+		double comissao;
+		
+		/*String menu = "Cadastro de vendas e calculadora de comissão.\n"
+				+ "1- \n"*/
+		System.out.println("Digite o valor da peça: ");
+		valorPeca = sc.nextDouble();
+		
+		System.out.println("Digite a quantidade vendida: ");
+		qtdVendida = sc.nextInt();
+		
+		comissao = (valorPeca * qtdVendida) * 0.05;
+		
+		System.out.println("Valor da comissão é: " + comissao);
+		
+		sc.close();
+		
+	}
+
+}
