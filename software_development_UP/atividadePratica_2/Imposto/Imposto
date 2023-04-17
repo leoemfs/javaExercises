@@ -6,8 +6,8 @@ public class CalculaImpostoMain {
 
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String menu = "1 - cadastro de vendas\n"
-        	    + "2 - consulta de imposto a pagar no mês (com base no mês e no ano das vendas).\n"
+        String menu = "1 - Cadastrar venda\n"
+        	    + "2 - Consultar imposto do mês (com base no mês e no ano das vendas).\n"
 		    + "0 - Sair."
 		    + "Opção: ";
 		    
