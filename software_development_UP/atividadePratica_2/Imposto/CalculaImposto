@@ -1,0 +1,81 @@
+package atividadePratica2;
+
+public class CalculaImposto {
+    private double[] vendas;
+    private int mes;
+    private int ano;
+    private double excesso = 0.0;
+    private double multa;
+    
+    //construtor da class
+    public CalculaImposto() {
+        vendas = new double[31];
+        mes = 0;
+        ano = 0;
+        excesso = 0.0;
+        multa = 0.0;
+    }
+    
+    //metodo para cadastrar uma venda do dia do mes
+    public void cadastrarVenda(int dia, double valor) {
+        vendas[dia - 1] = valor;
+    }
+    
+    //metodo para calcular o imposto e preencher excesso e multa
+    public void calcularImposto() {
+        double total = 0.0;
+        for (double venda : vendas) {
+            total += venda;
+            if (venda > 500.0) {
+                this.excesso += venda - 500.0;
+            }
+        }
+        multa = excesso * 0.1;
+    }
+
+    public void imprimirImposto() {
+        System.out.printf("Imposto a pagar no mês %d/%d:\n", mes, ano);
+        System.out.printf("Excesso: R$ %.2f\n", excesso);
+        System.out.printf("Multa: R$ %.2f\n", multa);
+    }
+  //set e get dos atributos da class
+	public double[] getVendas() {
+		return vendas;
+	}
+
+	public void setVendas(double[] vendas) {
+		this.vendas = vendas;
+	}
+
+	public int getMes() {
+		return mes;
+	}
+
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+
+	public double getExcesso() {
+		return excesso;
+	}
+
+	public void setExcesso(double excesso) {
+		this.excesso = excesso;
+	}
+
+	public double getMulta() {
+		return multa;
+	}
+
+	public void setMulta(double multa) {
+		this.multa = multa;
+	}
+}
