@@ -1,0 +1,65 @@
+package atividadePratica2;
+
+import java.util.Scanner;
+
+public class CalculaImpostoMain {
+
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String menu = "1 - cadastro de vendas\n"
+        			+ "2 - consulta de imposto a pagar no mês (com base no mês e no ano das vendas).\n"
+					+ "0 - Sair.";
+        //instanciando objeto calclua imposto
+        CalculaImposto novoCalculo = new CalculaImposto();
+        int opcao;
+        //imprimindo menu de opções e setando valores em mes e valor da venda
+        do {
+        	
+        	System.out.print(menu);
+            opcao = sc.nextInt();
+            
+            switch (opcao) {
+                case 1:
+                	
+                	//cadastrando uma venda de um mes
+                    System.out.print("Digite o mês (1-12): ");
+                    int mes = sc.nextInt();
+                    System.out.print("Valor da venda: ");
+                    double valor = sc.nextDouble();
+                    
+                    novoCalculo.cadastrarVenda(mes, valor);
+                    System.out.println("Venda cadastrada com sucesso.");
+                    
+                    break;
+                    
+                case 2:
+                	
+                    System.out.println("Mês das vendas (1-12): ");
+                    novoCalculo.setMes(sc.nextInt());
+                    
+                    System.out.println("Ano das vendas: ");
+                    novoCalculo.setAno(sc.nextInt());
+                    
+                    novoCalculo.calcularImposto();
+                    novoCalculo.imprimirImposto();
+                    
+                    break;
+                    
+                case 0:
+                	
+                    System.out.println("Saindo...");
+                    
+                    break;
+                    
+                default:
+                	
+                    System.out.println("Opção inválida.");
+                    
+                    break;
+            }
+        }while (opcao !=0);
+        
+        sc.close();
+    }
+
+}
