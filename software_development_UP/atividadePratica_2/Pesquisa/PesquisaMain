@@ -1,0 +1,79 @@
+package atividadePratica2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PesquisaMain {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String menu = "1 - Adicionar novo habitante\n"
+        			+ "2 - Média salarial do grupo\n"
+        			+ "3 - Maior idade do grupo\n"
+        			+ "4 - Menor idade do grupo\n"
+        			+ "5 - Quantidade de homens com salário até R$1000,00\n"
+        			+ "6 - Quantidade de mulheres\n"
+        			+ "Opção: ";
+        
+        ArrayList<Habitante> habitantes = new ArrayList<>();
+        int opcao = 0;
+        do {
+        	System.out.print(menu);
+            opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Idade: ");
+                    int idade = sc.nextInt();
+
+                    System.out.print("Gênero (M/F): ");
+                    char genero = sc.next().charAt(0);
+
+                    System.out.print("Salário: ");
+                    double salario = sc.nextDouble();
+
+                    Habitante habitante = new Habitante(idade, genero, salario);
+                    habitantes.add(habitante);
+
+                    break;
+
+                case 2:
+                    double mediaSalarial = Habitante.calcularMediaSalarial(habitantes);
+                    System.out.println("Média salarial: R$ " + mediaSalarial);
+
+                    break;
+
+                case 3:
+                    int maiorIdade = Habitante.calcularMaiorIdade(habitantes);
+                    System.out.println("Maior idade: " + maiorIdade + " anos");
+
+                    break;
+
+                case 4:
+                    int menorIdade = Habitante.calcularMenorIdade(habitantes);
+                    System.out.println("Menor idade: " + menorIdade + " anos");
+
+                    break;
+
+                case 5:
+                    int quantidadeHomensSalarioAteMil = Habitante.contarHomensComSalarioAteMil(habitantes);
+                    System.out.println("Quantidade de homens com salário até R$ 1000,00: " + quantidadeHomensSalarioAteMil);
+
+                    break;
+
+                case 6:
+                    int quantidadeMulheres = Habitante.contarMulheres(habitantes);
+                    System.out.println("Quantidade de mulheres: " + quantidadeMulheres);
+
+                    break;
+
+                case 0:
+                    System.out.println("Saindo...");
+                    return;
+
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+                    break;
+            }
+        }while(opcao !=0);
+    }
+}
