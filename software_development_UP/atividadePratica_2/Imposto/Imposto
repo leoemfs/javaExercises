@@ -7,16 +7,20 @@ public class CalculaImpostoMain {
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String menu = "1 - cadastro de vendas\n"
-        			+ "2 - consulta de imposto a pagar no mês (com base no mês e no ano das vendas).\n"
-					+ "0 - Sair.";
+        	    + "2 - consulta de imposto a pagar no mês (com base no mês e no ano das vendas).\n"
+		    + "0 - Sair."
+		    + "Opção: ";
+		    
         //instanciando objeto calclua imposto
         CalculaImposto novoCalculo = new CalculaImposto();
+	
         int opcao;
+	
         //imprimindo menu de opções e setando valores em mes e valor da venda
         do {
         	
         	System.out.print(menu);
-            opcao = sc.nextInt();
+            	opcao = sc.nextInt();
             
             switch (opcao) {
                 case 1:
