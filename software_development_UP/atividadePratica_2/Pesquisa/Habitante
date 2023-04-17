@@ -1,0 +1,103 @@
+package atividadePratica2;
+
+import java.util.ArrayList;
+
+public class Habitante {
+    private int idade;
+    private char genero;
+    private double salario;
+
+    public Habitante(int idade, char genero, double salario) {
+        this.idade = idade;
+        this.genero = genero;
+        this.salario = salario;
+    }
+
+    // getters e setters
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public char getGenero() {
+        return genero;
+    }
+
+    public void setGenero(char genero) {
+        this.genero = genero;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    // métodos de consulta
+
+    public static double calcularMediaSalarial(ArrayList<Habitante> habitantes) {
+        double mediaSalario = 0;
+
+        for (Habitante habitante : habitantes) {
+            mediaSalario += habitante.getSalario();
+        }
+
+        mediaSalario /= habitantes.size();
+
+        return mediaSalario;
+    }
+
+    public static int calcularMaiorIdade(ArrayList<Habitante> habitantes) {
+        int maiorIdade = 0;
+
+        for (Habitante habitante : habitantes) {
+            if (habitante.getIdade() > maiorIdade) {
+                maiorIdade = habitante.getIdade();
+            }
+        }
+
+        return maiorIdade;
+    }
+
+    public static int calcularMenorIdade(ArrayList<Habitante> habitantes) {
+        int menorIdade = Integer.MAX_VALUE;
+
+        for (Habitante habitante : habitantes) {
+            if (habitante.getIdade() < menorIdade) {
+                menorIdade = habitante.getIdade();
+            }
+        }
+
+        return menorIdade;
+    }
+
+    public static int contarHomensComSalarioAteMil(ArrayList<Habitante> habitantes) {
+        int quantidadeHomensSalarioAteMil = 0;
+
+        for (Habitante habitante : habitantes) {
+            if (habitante.getGenero() == 'M' && habitante.getSalario() <= 1000) {
+                quantidadeHomensSalarioAteMil++;
+            }
+        }
+
+        return quantidadeHomensSalarioAteMil;
+    }
+
+    public static int contarMulheres(ArrayList<Habitante> habitantes) {
+        int quantidadeMulheres = 0;
+
+        for (Habitante habitante : habitantes) {
+            if (habitante.getGenero() == 'F') {
+                quantidadeMulheres++;
+            }
+        }
+
+        return quantidadeMulheres;
+    }
+}
