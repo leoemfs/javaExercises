@@ -3,12 +3,13 @@ package atividadePratica2;
 public class PessoaMain {
 
 	public static void main(String[] args) {
-	        Pessoa p1 = new Pessoa("123.456.789-00", 30);
-	        Pessoa p2 = new Pessoa(25);
-	        Pessoa p3 = new Pessoa("987.654.321-00");
+	//instanciando objeto pessoa com e sem parametros
+	    Pessoa p1 = new Pessoa("123.456.789-00", 30);
+	    Pessoa p2 = new Pessoa(25);
+	    Pessoa p3 = new Pessoa("987.654.321-00");
 
-	        System.out.println("Pessoa 1: CPF=" + p1.getCpf() + ", idade=" + p1.getIdade());
-	        System.out.println("Pessoa 2: CPF=" + p2.getCpf() + ", idade=" + p2.getIdade());
-	        System.out.println("Pessoa 3: CPF=" + p3.getCpf() + ", idade=" + p3.getIdade());
+	    System.out.println("Pessoa 1: CPF=" + p1.getCpf() + ", idade=" + p1.getIdade());
+	    System.out.println("Pessoa 2: CPF=" + p2.getCpf() + ", idade=" + p2.getIdade());
+	    System.out.println("Pessoa 3: CPF=" + p3.getCpf() + ", idade=" + p3.getIdade());
 	}
 }
